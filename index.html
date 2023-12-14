@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <!-- <div class="theme-mode">
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="switch__slider switch__round"></span>
+          </label>
+          <span class="theme-mode-text">Dark Mode</span>
+        </div> -->
+
+        <!-- <form class="search-container">
+          <img class="search__icon" src="./icons/search.png" alt="" />
+          <input
+            class="search__input"
+            type="search"
+            placeholder="Search for your preferred city..."
+          />
+        </form> -->
+
+        <input
+          class="search__input"
+          type="search"
+          placeholder="Search for your preferred city..."
+        />
+
+        <button class="location">
+          <img
+            class="location__icon"
+            src="./icons/currentlocation.png"
+            alt="currentlocation"
+          />
+          <div class="location-text">Current Location</div>
+        </button>
+      </header>
+
+      <main>
+        <div class="main-wrapper">
+          <div class="time">
+            <p class="time__city">Athens</p>
+            <p class="time__time">09:03</p>
+            <p class="time__date">Thursday, 31 Aug</p>
+          </div>
+
+          <div class="weather">
+            <div class="weather-wrapper-left">
+              <div class="weather-temperature">
+                <p class="weather-temperature-value">24°C</p>
+                <p class="weather-temperature-feelslike">
+                  Feels like:
+                  <span class="weather-temperature-feelslike-value">22°C</span>
+                </p>
+              </div>
+
+              <div class="weather-sunrise">
+                <img
+                  src="./icons/sunrise-white.png"
+                  alt=""
+                  class="wether-sunrise-icon"
+                />
+                <div class="sunrise-div">
+                  <p class="sunrise-text">Sunrise</p>
+                  <p class="sunrise-time">09:03 AM</p>
+                </div>
+              </div>
+
+              <div class="weather-sunset">
+                <img
+                  src="./icons/sunset-white.png"
+                  alt=""
+                  class="weather-sunrise-icon"
+                />
+                <div class="sunset-div">
+                  <p class="sunset-text">Sunset</p>
+                  <p class="sunset-time">09:03 AM</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="weather-wrapper-middle">
+              <img
+                src="./icons/clear.png"
+                alt=""
+                class="weather-condition-image"
+              />
+              <p class="weather-condition-text">Sunny</p>
+            </div>
+
+            <div class="weather-wrapper-right">
+              <div class="weather-extra-details">
+                <div class="weather-humidity">
+                  <img
+                    src="/icons/humidity.png"
+                    alt=""
+                    class="weather-extra-icon"
+                  />
+                  <p class="weather-extra-value weather-humidity-value">41%</p>
+                  <p class="weather-extra-text">Humidity</p>
+                </div>
+                <div class="weather-wind">
+                  <img
+                    src="./icons/wind.png"
+                    alt=""
+                    class="weather-extra-icon"
+                  />
+                  <p class="weather-extra-value weather-wind-value">997hPa</p>
+                  <p class="weather-extra-text">Pressure</p>
+                </div>
+                <div class="weather-pressure">
+                  <img
+                    src="./icons/pressure-white.png"
+                    alt=""
+                    class="weather-extra-icon"
+                  />
+                  <p class="weather-extra-value weather-pressure-value">
+                    2km/h
+                  </p>
+                  <p class="weather-extra-text">Wind Speed</p>
+                </div>
+                <div class="weather-uv">
+                  <img
+                    src="./icons/uv-white.png"
+                    alt=""
+                    class="weather-extra-icon"
+                  />
+                  <p class="weather-extra-value weather-uv-value">8</p>
+                  <p class="weather-extra-text">UV</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="weather__fivedays">
+            <p class="weather__fivedays-title">5 Days Forecast</p>
+            <div class="weather__fivedays-cards">
+              <div class="weather__fivedays-card">
+                <img
+                  src="./icons/clouds 1.png"
+                  alt=""
+                  class="weather__fivedays-icon"
+                />
+                <p class="weather__fivedays-card-temp">24°C</p>
+                <p class="weather__fivedays-card-day">Friday, 1 Sep</p>
+              </div>
+              <div class="weather__fivedays-card">
+                <img
+                  src="./icons/clouds 1.png"
+                  alt=""
+                  class="weather__fivedays-icon"
+                />
+                <p class="weather__fivedays-card-temp">24°C</p>
+                <p class="weather__fivedays-card-day">Friday, 1 Sep</p>
+              </div>
+              <div class="weather__fivedays-card">
+                <img
+                  src="./icons/clouds 1.png"
+                  alt=""
+                  class="weather__fivedays-icon"
+                />
+                <p class="weather__fivedays-card-temp">24°C</p>
+                <p class="weather__fivedays-card-day">Friday, 1 Sep</p>
+              </div>
+              <div class="weather__fivedays-card">
+                <img
+                  src="./icons/clouds 1.png"
+                  alt=""
+                  class="weather__fivedays-icon"
+                />
+                <p class="weather__fivedays-card-temp">24°C</p>
+                <p class="weather__fivedays-card-day">Friday, 1 Sep</p>
+              </div>
+              <div class="weather__fivedays-card">
+                <img
+                  src="./icons/clouds 1.png"
+                  alt=""
+                  class="weather__fivedays-icon"
+                />
+
+                <p class="weather__fivedays-card-temp">24°C</p>
+                <p class="weather__fivedays-card-day">Friday, 1 Sep</p>
+              </div>
+            </div>
+          </div>
+          <div class="weather__hourly">
+            <p class="weather__hourly-title">Hourly Forecast</p>
+            <div class="weather__hourly-cards">
+              <div class="weather__hourly-card">
+                <p class="weather__hourly-time">12:00</p>
+                <img
+                  src="./icons/clearhourly.png"
+                  alt=""
+                  class="weather__hourly-icon"
+                />
+                <p class="weather__hourly-temp">26°C</p>
+                <img
+                  src="./icons/navigation.png"
+                  alt=""
+                  class="weather__hourly-arrow"
+                />
+                <p class="weather__hourly-windspeed">3km/h</p>
+              </div>
+              <div class="weather__hourly-card">
+                <p class="weather__hourly-time">12:00</p>
+                <img
+                  src="./icons/clearhourly.png"
+                  alt=""
+                  class="weather__hourly-icon"
+                />
+                <p class="weather__hourly-temp">26°C</p>
+                <img
+                  src="./icons/navigation.png"
+                  alt=""
+                  class="weather__hourly-arrow"
+                />
+                <p class="weather__hourly-windspeed">3km/h</p>
+              </div>
+              <div class="weather__hourly-card">
+                <p class="weather__hourly-time">12:00</p>
+                <img
+                  src="./icons/clearhourly.png"
+                  alt=""
+                  class="weather__hourly-icon"
+                />
+                <p class="weather__hourly-temp">26°C</p>
+                <img
+                  src="./icons/navigation.png"
+                  alt=""
+                  class="weather__hourly-arrow"
+                />
+                <p class="weather__hourly-windspeed">3km/h</p>
+              </div>
+              <div class="weather__hourly-card">
+                <p class="weather__hourly-time">12:00</p>
+                <img
+                  src="./icons/clearhourly.png"
+                  alt=""
+                  class="weather__hourly-icon"
+                />
+                <p class="weather__hourly-temp">26°C</p>
+                <img
+                  src="./icons/navigation.png"
+                  alt=""
+                  class="weather__hourly-arrow"
+                />
+                <p class="weather__hourly-windspeed">3km/h</p>
+              </div>
+              <div class="weather__hourly-card">
+                <p class="weather__hourly-time">12:00</p>
+                <img
+                  src="./icons/clearhourly.png"
+                  alt=""
+                  class="weather__hourly-icon"
+                />
+                <p class="weather__hourly-temp">26°C</p>
+                <img
+                  src="./icons/navigation.png"
+                  alt=""
+                  class="weather__hourly-arrow"
+                />
+                <p class="weather__hourly-windspeed">3km/h</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
