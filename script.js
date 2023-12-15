@@ -49,6 +49,7 @@ const weatherFiveDaysDayNode = document.querySelectorAll(
 );
 
 const searchInputNode = document.querySelector(".search__input");
+const sliderNode = document.querySelector(".slider");
 
 const API_KEY = "6395f05bb41e3806b588cbe36a5907e9";
 const API_KEY_IPIFY = "at_gzBTSbas4QvOJlf1M45VivQB30YG3";
@@ -252,8 +253,6 @@ async function getLocationByIP() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    // const country = data.location.country;
-    // const city = data.location.city;
     console.log(data);
     console.log(data.location.lat);
     console.log(data.location.lng);
@@ -287,5 +286,101 @@ searchInputNode.addEventListener("keyup", (event) => {
     const city = searchInputNode.value.toLowerCase();
     fetchWeatherByCityName(city);
     searchInputNode.value = "";
+  }
+});
+
+// ТЕМУ МЕНЯЮ, ДЕЛАЮ ТУПО, ДЕЛАЮ КРИВО
+let currentTheme = null;
+const weatherHourlyCardNode = document.querySelectorAll(
+  ".weather__hourly-card"
+);
+let weatherNode = document.querySelector(".weather");
+const themeModeTextNode = document.querySelector(".theme-mode-text");
+
+sliderNode.addEventListener("click", () => {
+  if (currentTheme === null) {
+    weatherNode.querySelectorAll("img").forEach((img) => {
+      if (!img.classList.contains("weather-condition-image")) {
+        img.src = img.dataset.dark;
+      }
+    });
+
+    themeModeTextNode.textContent = "Light Mode";
+    sliderNode.style.border = "1px solid #000";
+
+    document.body.style.background =
+      "linear-gradient(113deg, #FFF 0.28%, rgba(70, 97, 115, 0.00) 178.65%)";
+    document.documentElement.style.setProperty("--background-color", "#D9D9D9");
+    document.documentElement.style.setProperty("--text-color-alpha", "#292929");
+    document.documentElement.style.setProperty("--text-color", "#292929");
+    searchInputNode.style.border = "1px solid #000";
+
+    weatherHourlyCardNode.forEach((node) => {
+      console.log(node);
+      if (node.classList.contains("evening")) {
+        node.style.background =
+          "linear-gradient(168deg, #443D64 -19.21%, rgba(101, 130, 198, 0.00) 158.48%)";
+      } else
+        node.style.background =
+          "linear-gradient(171deg, #F88508 -12.41%, rgba(246, 250, 217, 0.00) 163.32%)";
+    });
+
+    currentTheme = "light";
+  } else if (currentTheme === "light") {
+    weatherNode.querySelectorAll("img").forEach((img) => {
+      if (!img.classList.contains("weather-condition-image")) {
+        img.src = img.dataset.light;
+      }
+    });
+
+    themeModeTextNode.textContent = "Dark Mode";
+    sliderNode.style.border = "none";
+
+    document.body.style.background =
+      "linear-gradient(#383838 30%, rgba(158, 158, 158, 0) 71.82%), rgba(17, 17, 17, 1)";
+    document.documentElement.style.setProperty("--background-color", "#444");
+    document.documentElement.style.setProperty(
+      "--text-color-alpha",
+      "rgba(255, 255, 255, 0.80"
+    );
+    document.documentElement.style.setProperty("--text-color", "#FFF");
+
+    searchInputNode.style.border = "none";
+
+    weatherHourlyCardNode.forEach((node) => {
+      console.log(node);
+      node.style.background = "#373636";
+    });
+
+    currentTheme = "dark";
+  } else {
+    weatherNode.querySelectorAll("img").forEach((img) => {
+      if (!img.classList.contains("weather-condition-image")) {
+        img.src = img.dataset.dark;
+      }
+    });
+
+    themeModeTextNode.textContent = "Light Mode";
+    sliderNode.style.border = "1px solid #000";
+
+    document.body.style.background =
+      "linear-gradient(113deg, #FFF 0.28%, rgba(70, 97, 115, 0.00) 178.65%)";
+    document.documentElement.style.setProperty("--background-color", "#D9D9D9");
+    document.documentElement.style.setProperty("--text-color-alpha", "#292929");
+    document.documentElement.style.setProperty("--text-color", "#292929");
+
+    searchInputNode.style.border = "1px solid #000";
+
+    weatherHourlyCardNode.forEach((node) => {
+      console.log(node);
+      if (node.classList.contains("evening")) {
+        node.style.background =
+          "linear-gradient(168deg, #443D64 -19.21%, rgba(101, 130, 198, 0.00) 158.48%)";
+      } else
+        node.style.background =
+          "linear-gradient(171deg, #F88508 -12.41%, rgba(246, 250, 217, 0.00) 163.32%)";
+    });
+
+    currentTheme = "light";
   }
 });

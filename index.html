@@ -14,24 +14,25 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <div class="container">
       <header class="header">
-        <!-- <div class="theme-mode">
+        <div class="theme-mode">
           <label class="switch">
-            <input type="checkbox" />
-            <span class="switch__slider switch__round"></span>
+            <input type="checkbox" id="darkModeToggle" />
+            <span class="slider round"></span>
           </label>
           <span class="theme-mode-text">Dark Mode</span>
-        </div> -->
-
-        <!-- <form class="search-container">
-          <img class="search__icon" src="./icons/search.png" alt="" />
-          <input
-            class="search__input"
-            type="search"
-            placeholder="Search for your preferred city..."
-          />
-        </form> -->
+        </div>
 
         <input
           class="search__input"
@@ -52,100 +53,148 @@
       <main>
         <div class="main-wrapper">
           <div class="time">
-            <p class="time__city">Athens</p>
-            <p class="time__time">09:03</p>
-            <p class="time__date">Thursday, 31 Aug</p>
+            <div class="content">
+              <!-- <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div> -->
+              <p class="time__city"></p>
+              <p class="time__time"></p>
+              <p class="time__date"></p>
+            </div>
           </div>
 
           <div class="weather">
-            <div class="weather-wrapper-left">
-              <div class="weather-temperature">
-                <p class="weather-temperature-value">24°C</p>
-                <p class="weather-temperature-feelslike">
-                  Feels like:
-                  <span class="weather-temperature-feelslike-value">22°C</span>
-                </p>
-              </div>
-
-              <div class="weather-sunrise">
-                <img
-                  src="./icons/sunrise-white.png"
-                  alt=""
-                  class="wether-sunrise-icon"
-                />
-                <div class="sunrise-div">
-                  <p class="sunrise-text">Sunrise</p>
-                  <p class="sunrise-time">09:03 AM</p>
-                </div>
-              </div>
-
-              <div class="weather-sunset">
-                <img
-                  src="./icons/sunset-white.png"
-                  alt=""
-                  class="weather-sunrise-icon"
-                />
-                <div class="sunset-div">
-                  <p class="sunset-text">Sunset</p>
-                  <p class="sunset-time">09:03 AM</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="weather-wrapper-middle">
-              <img
-                src="./icons/clear.png"
-                alt=""
-                class="weather-condition-image"
-              />
-              <p class="weather-condition-text">Sunny</p>
-            </div>
-
-            <div class="weather-wrapper-right">
-              <div class="weather-extra-details">
-                <div class="weather-humidity">
-                  <img
-                    src="/icons/humidity.png"
-                    alt=""
-                    class="weather-extra-icon"
-                  />
-                  <p class="weather-extra-value weather-humidity-value">41%</p>
-                  <p class="weather-extra-text">Humidity</p>
-                </div>
-                <div class="weather-wind">
-                  <img
-                    src="./icons/wind.png"
-                    alt=""
-                    class="weather-extra-icon"
-                  />
-                  <p class="weather-extra-value weather-wind-value">997hPa</p>
-                  <p class="weather-extra-text">Pressure</p>
-                </div>
-                <div class="weather-pressure">
-                  <img
-                    src="./icons/pressure-white.png"
-                    alt=""
-                    class="weather-extra-icon"
-                  />
-                  <p class="weather-extra-value weather-pressure-value">
-                    2km/h
+            <div class="content weather-content">
+              <!-- <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div> -->
+              <div class="weather-wrapper-left">
+                <div class="weather-temperature">
+                  <p class="weather-temperature-value"></p>
+                  <p class="weather-temperature-feelslike">
+                    Feels like:
+                    <span class="weather-temperature-feelslike-value"></span>
                   </p>
-                  <p class="weather-extra-text">Wind Speed</p>
                 </div>
-                <div class="weather-uv">
+
+                <div class="weather-sunrise">
                   <img
-                    src="./icons/uv-white.png"
+                    src="./icons/sunrise-white.png"
                     alt=""
-                    class="weather-extra-icon"
+                    class="wether-sunrise-icon"
+                    data-light="./icons/sunrise-white.png"
+                    data-dark="./icons/sunrise-black.png"
                   />
-                  <p class="weather-extra-value weather-uv-value">8</p>
-                  <p class="weather-extra-text">UV</p>
+                  <div class="sunrise-div">
+                    <p class="sunrise-text">Sunrise</p>
+                    <p class="sunrise-time">09:03 AM</p>
+                  </div>
+                </div>
+
+                <div class="weather-sunset">
+                  <img
+                    src="./icons/sunset-white.png"
+                    alt=""
+                    class="weather-sunset-icon"
+                    data-light="./icons/sunset-white.png"
+                    data-dark="./icons/sunset-black.png"
+                  />
+                  <div class="sunset-div">
+                    <p class="sunset-text">Sunset</p>
+                    <p class="sunset-time">09:03 AM</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="weather-wrapper-middle">
+                <img
+                  src="./icons/clear.png"
+                  alt=""
+                  class="weather-condition-image"
+                />
+                <p class="weather-condition-text">Sunny</p>
+              </div>
+
+              <div class="weather-wrapper-right">
+                <div class="weather-extra-details">
+                  <div class="weather-humidity">
+                    <img
+                      src="./icons/humidity.png"
+                      alt=""
+                      class="weather-extra-icon"
+                      data-light="./icons/humidity.png"
+                      data-dark="./icons/humidity-black.png"
+                    />
+                    <p class="weather-extra-value weather-humidity-value">
+                      41%
+                    </p>
+                    <p class="weather-extra-text">Humidity</p>
+                  </div>
+                  <div class="weather-wind">
+                    <img
+                      src="./icons/wind.png"
+                      alt=""
+                      class="weather-extra-icon"
+                      data-light="./icons/wind.png"
+                      data-dark="./icons/wind-black.png"
+                    />
+                    <p class="weather-extra-value weather-wind-value">997hPa</p>
+                    <p class="weather-extra-text">Wind Speed</p>
+                  </div>
+                  <div class="weather-pressure">
+                    <img
+                      src="./icons/pressure-white.png"
+                      alt=""
+                      class="weather-extra-icon"
+                      data-light="./icons/pressure-white.png"
+                      data-dark="./icons/pressure-black.png"
+                    />
+                    <p class="weather-extra-value weather-pressure-value">
+                      2km/h
+                    </p>
+                    <p class="weather-extra-text">Pressure</p>
+                  </div>
+                  <div class="weather-uv">
+                    <img
+                      src="./icons/uv-white.png"
+                      alt=""
+                      class="weather-extra-icon"
+                      data-light="./icons/uv-white.png"
+                      data-dark="./icons/uv-black.png"
+                    />
+                    <p class="weather-extra-value weather-uv-value">8</p>
+                    <p class="weather-extra-text">UV</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="weather__fivedays">
+            <!-- <div class="lds-roller">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div> -->
             <p class="weather__fivedays-title">5 Days Forecast</p>
             <div class="weather__fivedays-cards">
               <div class="weather__fivedays-card">
@@ -197,6 +246,16 @@
             </div>
           </div>
           <div class="weather__hourly">
+            <!-- <div class="lds-roller">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div> -->
             <p class="weather__hourly-title">Hourly Forecast</p>
             <div class="weather__hourly-cards">
               <div class="weather__hourly-card">
@@ -244,7 +303,7 @@
                 />
                 <p class="weather__hourly-windspeed">3km/h</p>
               </div>
-              <div class="weather__hourly-card">
+              <div class="weather__hourly-card evening">
                 <p class="weather__hourly-time">12:00</p>
                 <img
                   src="./icons/clearhourly.png"
@@ -259,7 +318,7 @@
                 />
                 <p class="weather__hourly-windspeed">3km/h</p>
               </div>
-              <div class="weather__hourly-card">
+              <div class="weather__hourly-card evening">
                 <p class="weather__hourly-time">12:00</p>
                 <img
                   src="./icons/clearhourly.png"
